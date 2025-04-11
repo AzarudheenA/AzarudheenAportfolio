@@ -1,64 +1,74 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #1e014c, #330066);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.container {
+.main-wrapper {
+  padding: 1rem;
+}
+
+.card {
   background: white;
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 400px;
-  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  max-width: 360px;
+  margin: auto;
 }
 
-.profile-image img {
-  width: 180px;
-  height: 180px;
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #ccc;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
 }
 
 h1 {
+  margin: 0.5rem 0 0;
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  color: #222;
 }
 
-.contact-info {
-  margin: 10px 0 20px;
-}
-
-.contact-info p {
-  margin: 5px 0;
+.title {
   font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.contact-box p {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+  margin: 4px 0;
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+  width: 18px;
+  height: 18px;
 }
 
 .button {
-  background-color: #007bff;
+  display: inline-block;
+  background-color: #5a00c7;
   color: white;
   padding: 10px 16px;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-color: #400099;
 }
