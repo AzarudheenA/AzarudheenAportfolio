@@ -1,25 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azarudheen A Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
-  <div class="main-wrapper">
+  <nav class="navbar">
+    <div class="nav-left">Azarudheen A</div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="toggle-theme">🌙</button>
+    </div>
+  </nav>
+
+  <div class="main-wrapper fade-in" id="about">
     <div class="card">
       <div class="image-box">
         <img src="1000043295.png" alt="Azarudheen A" />
       </div>
       <h1>Azarudheen A</h1>
       <p class="title">Software Test Automation Engineer</p>
-      <div class="contact-box">
+      <div class="contact-box" id="contact">
         <p><img src="whatsapp-icon.png" class="icon" alt="WhatsApp" /> +91 9791431876</p>
         <p><img src="email-icon.png" class="icon" alt="Email" /> Axarudheena@gmail.com</p>
       </div>
       <a href="Azarudheen_Resume.pdf" class="button" download>Download Resume</a>
     </div>
   </div>
+
+  <script>
+    const toggleButton = document.getElementById('toggle-theme');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleButton.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
 </body>
-</html>
