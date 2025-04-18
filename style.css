@@ -1,18 +1,60 @@
+/* Base reset */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #1e014c, #330066);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 1rem;
-  box-sizing: border-box;
+  padding: 0;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Navigation bar */
+.navbar {
+  width: 100%;
+  max-width: 1000px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: black;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-right a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.nav-right button {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Main content */
 .main-wrapper {
   width: 100%;
   max-width: 600px;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -76,7 +118,32 @@ h1 {
   background-color: #400099;
 }
 
-/* Responsive scaling on larger screens */
+/* Dark Mode */
+body.dark {
+  background: linear-gradient(to bottom right, #0d0d0d, #1f1f1f);
+  color: #f0f0f0;
+}
+
+body.dark .navbar {
+  background: #111;
+  color: white;
+}
+
+body.dark .navbar a {
+  color: white;
+}
+
+body.dark .card {
+  background: #222;
+  color: white;
+}
+
+body.dark .title,
+body.dark .contact-box p {
+  color: #ccc;
+}
+
+/* Responsive */
 @media (min-width: 768px) {
   .card {
     padding: 3rem;
@@ -92,5 +159,17 @@ h1 {
 
   .contact-box p {
     font-size: 1.05rem;
+  }
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
