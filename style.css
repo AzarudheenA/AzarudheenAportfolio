@@ -1,62 +1,28 @@
-/* Base reset */
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #1e014c, #330066);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 0;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Navigation bar */
-.navbar {
-  width: 100%;
-  max-width: 1000px;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  color: black;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nav-left {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.nav-right a {
-  margin-right: 1rem;
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-}
-
-.nav-right button {
-  border: none;
-  background: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-/* Main content */
+/* Container */
 .main-wrapper {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   padding: 1rem;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
+/* Card styling */
 .card {
   background: white;
   padding: 2rem;
@@ -65,8 +31,10 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   width: 100%;
   box-sizing: border-box;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
+/* Image */
 .image-box img {
   width: 100%;
   height: auto;
@@ -76,33 +44,37 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Text */
 h1 {
   margin: 0.5rem 0 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #222;
 }
 
 .title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #555;
   margin-bottom: 1rem;
 }
 
+/* Contact Info */
 .contact-box p {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #333;
   margin: 4px 0;
 }
 
+/* Icons */
 .icon {
   width: 18px;
   height: 18px;
 }
 
+/* Resume Button */
 .button {
   display: inline-block;
   background-color: #5a00c7;
@@ -118,24 +90,20 @@ h1 {
   background-color: #400099;
 }
 
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 /* Dark Mode */
 body.dark {
   background: linear-gradient(to bottom right, #0d0d0d, #1f1f1f);
-  color: #f0f0f0;
-}
-
-body.dark .navbar {
-  background: #111;
-  color: white;
-}
-
-body.dark .navbar a {
-  color: white;
 }
 
 body.dark .card {
-  background: #222;
-  color: white;
+  background: #1e1e1e;
+  color: #f0f0f0;
 }
 
 body.dark .title,
@@ -143,33 +111,29 @@ body.dark .contact-box p {
   color: #ccc;
 }
 
-/* Responsive */
+body.dark .button {
+  background-color: #7700ff;
+}
+
+body.dark .button:hover {
+  background-color: #5500aa;
+}
+
+/* Responsive Typography */
+@media (min-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+}
+
 @media (min-width: 768px) {
   .card {
-    padding: 3rem;
+    padding: 2.5rem;
   }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .title {
-    font-size: 1.2rem;
-  }
-
-  .contact-box p {
-    font-size: 1.05rem;
-  }
-}
-
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+  .main-wrapper {
+    max-width: 500px;
   }
 }
